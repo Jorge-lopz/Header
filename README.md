@@ -1,1 +1,1 @@
-## Effortlessly add custom headers to your code files with a command or hotkey
+## Effortlessly add custom headers to your code with a command or hotkey
