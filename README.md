@@ -1,6 +1,6 @@
 ## Effortlessly add custom headers to your code with a command or hotkey!
 
-![Example header](https://github.com/Jorge-lopz/Header/blob/948e97836cff4317309382510667dbc7a56e0067/assets/carbon.svg)
+![Example header](assets/Example.svg)
 
 ### 📖 Features
 - [x] Customizable Templates: Change the author and the ASCII icon
