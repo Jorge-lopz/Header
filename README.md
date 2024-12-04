@@ -1,6 +1,6 @@
 ## Effortlessly add custom headers to your code with a command or hotkey!
 
-![Example header](assets/Example.svg)
+![Example header](assets/Example.png)
 
 ### 📖 Features
 - [x] Customizable Templates: Change the author and the ASCII icon
