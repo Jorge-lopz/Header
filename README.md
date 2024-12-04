@@ -1,4 +1,4 @@
-## Effortlessly add custom headers to your code with a command or hotkey! 🚀
+## Effortlessly add custom headers to your code with a command or hotkey!
 
 ### 📖 Features
 - [x] Customizable Templates: Change the author and the ASCII icon
