@@ -14,23 +14,23 @@ HEADER_PATTERN = re.compile(re.escape(HEADER_START_END) + r".*?" + re.escape(HEA
 # Define the header icons (https://patorjk.com/software/taag/#p=display&f=Alligator)
 
 AD_ICON = [  # <Acceso a Datos>
-    "         ::::     :::::::: ",
-    "       ++: :+:   :+:   :++:",
-    "     #:+   +:+  +:+    +:+ ",
-    "   +#++:++#++: +#:    +:+  ",
-    "  +#+     +#+ ##+    +#+   ",
-    " ##+     #+# ###    ##+    ",
-    "###     ### ########+      "
+    "            ::::      ::::::::    ",
+    "          ++: :+:    :+:   :++:   ",
+    "        #:+   +:+   +:+    +:+    ",
+    "      +#++:++#++:  +#:    +:+     ",
+    "     +#+     +#+  ##+    +#+      ",
+    "    ##+     #+#  ###    ##+       ",
+    "   ###     ###  ########+         "
 ]
 
 AC_ICON = [  # <Advent of Code>
-    "         ::::      ::::::::",
-    "       ++: :+:   :+:    :+:",
-    "     #:+   +:+  +:+        ",
-    "   +#++:++#++: +#+         ",
-    "  +#+     +#+ +#+          ",
-    " ##+     #+# #+#    #+#    ",
-    "###     ###  ########      "
+    "         ::::             ::::::::",
+    "       ++: :+:          :+:    :+:",
+    "     #:+   +:+         +:+        ",
+    "   +#++:++#++:        +#+         ",
+    "  +#+     +#+  ++::  +#+          ",
+    " ##+     #+#  #   # #+#    #+#    ",
+    "###     ###   ####  ########      "
 ]
 AUTHOR = "Jorge Lopez Puebla"
 DATE = datetime.now().strftime('%d/%m/%Y')
@@ -48,13 +48,13 @@ def generate_header(file, project):
     header_lines = [
         HEADER_START_END,
         HEADER_BASE,
-        f"#     {file + (' ' * (MAX_LEN - len(file) - 39)) + HEADER_ICON[0]}       #",
-        f"#     {(' ' * (MAX_LEN - 39)) + HEADER_ICON[1]}       #",
-        f"#     PROJECT: {project + (' ' * (MAX_LEN - len(project) - 48)) + HEADER_ICON[2]}       #",
-        f"#     {(' ' * (MAX_LEN - 39)) + HEADER_ICON[3]}       #",
-        f"#     {(' ' * (MAX_LEN - 39)) + HEADER_ICON[4]}       #",
-        f"#     AUTHOR: {AUTHOR + (' ' * (MAX_LEN - len(AUTHOR) - 47)) + HEADER_ICON[5]}       #",
-        f"#     LAST UPDATE: {DATE + (' ' * (MAX_LEN - len(DATE) - 52)) + HEADER_ICON[6]}       #",
+        f"#     {file + (' ' * (MAX_LEN - len(file) - 45)) + HEADER_ICON[0]}      #",
+        f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[1]}      #",
+        f"#     PROJECT: {project + (' ' * (MAX_LEN - len(project) - 54)) + HEADER_ICON[2]}      #",
+        f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[3]}      #",
+        f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[4]}      #",
+        f"#     AUTHOR: {AUTHOR + (' ' * (MAX_LEN - len(AUTHOR) - 53)) + HEADER_ICON[5]}      #",
+        f"#     LAST UPDATE: {DATE + (' ' * (MAX_LEN - len(DATE) - 58)) + HEADER_ICON[6]}      #",
         HEADER_BASE,
         HEADER_START_END
     ]
