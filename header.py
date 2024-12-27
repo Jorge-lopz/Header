@@ -16,9 +16,6 @@ import sys
 import unidecode
 from datetime import datetime
 
-# TODO -> Make it work with virtual environments (.venv at least)
-# TODO -> Make it add a different header depending on the project and file extension (with JSON config file)
-
 HEADER_START_END = "# --------------------------------------------------------------------------- #"
 HEADER_BASE = "#                                                                             #"
 HEADER_PATTERN = re.compile(re.escape(HEADER_START_END) + r".*?" + re.escape(HEADER_START_END) + "\n", re.DOTALL)
