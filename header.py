@@ -36,7 +36,7 @@ AUTHOR = "Jorge Lopez Puebla"
 DATE = datetime.now().strftime('%d/%m/%Y')
 MAX_LEN = 77
 
-def generate_header(file, project):
+def generate_header(file, project, creation_date):
     # Truncate filename, project, and other fields to fit within the width
     file = file[:30]
     project = project[:21]
@@ -51,9 +51,9 @@ def generate_header(file, project):
         f"#     {file + (' ' * (MAX_LEN - len(file) - 45)) + HEADER_ICON[0]}      #",
         f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[1]}      #",
         f"#     PROJECT: {project + (' ' * (MAX_LEN - len(project) - 54)) + HEADER_ICON[2]}      #",
-        f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[3]}      #",
+        f"#     AUTHOR: {AUTHOR + (' ' * (MAX_LEN - len(AUTHOR) - 53)) + HEADER_ICON[3]}      #",
         f"#     {(' ' * (MAX_LEN - 45)) + HEADER_ICON[4]}      #",
-        f"#     AUTHOR: {AUTHOR + (' ' * (MAX_LEN - len(AUTHOR) - 53)) + HEADER_ICON[5]}      #",
+        f"#     CREATED DATE: {creation_date + (' ' * (MAX_LEN - len(creation_date) - 59)) + HEADER_ICON[5]}      #",
         f"#     LAST UPDATE: {DATE + (' ' * (MAX_LEN - len(DATE) - 58)) + HEADER_ICON[6]}      #",
         HEADER_BASE,
         HEADER_START_END
@@ -71,10 +71,16 @@ def process_file(file_path, project):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    header = generate_header(os.path.basename(file_path), project)
+    existing_header = HEADER_PATTERN.search(content)
+
+    if existing_header:
+        creation_date = re.compile(r'CREATED DATE:\s+(\d{2}/\d{2}/\d{4})').search(content).group(1)
+    else:
+        creation_date = datetime.fromtimestamp(os.path.getctime(file_path)).strftime('%d/%m/%Y')
+    header = generate_header(os.path.basename(file_path), project, creation_date)
 
     # Replace the header if it exists, or add a new one
-    if HEADER_PATTERN.search(content):
+    if existing_header:
         content = HEADER_PATTERN.sub(header, content)
     else:
         content = header + "\n" + content
