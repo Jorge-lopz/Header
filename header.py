@@ -1,3 +1,15 @@
+# --------------------------------------------------------------------------- #
+#                                                                             #
+#     header.py                             :::           ::: :::             #
+#                                         :+:            :+:    :+:           #
+#     PROJECT: Header                   +:+             +:+       +:+         #
+#     AUTHOR: Jorge Lopez Puebla      +#+              +#+          +#+       #
+#                                       +#+           +#+         +#+         #
+#     CREATED DATE: 15/09/2024            #+#        #+#        #+#           #
+#     LAST UPDATE: 27/12/2024               ###     ###       ###             #
+#                                                                             #
+# --------------------------------------------------------------------------- #
+
 import os
 import re
 import sys
@@ -5,13 +17,23 @@ import unidecode
 from datetime import datetime
 
 # TODO -> Make it work with virtual environments (.venv at least)
-# TODO -> Make it add a different header depending on the file type (with config file)
+# TODO -> Make it add a different header depending on the project and file extension (with JSON config file)
 
 HEADER_START_END = "# --------------------------------------------------------------------------- #"
 HEADER_BASE = "#                                                                             #"
 HEADER_PATTERN = re.compile(re.escape(HEADER_START_END) + r".*?" + re.escape(HEADER_START_END) + "\n", re.DOTALL)
 
 # Define the header icons (https://patorjk.com/software/taag/#p=display&f=Alligator)
+
+SCRIPT_ICON = [  # <SRC>
+    "      :::           ::: :::       ",
+    "    :+:            :+:    :+:     ",
+    "  +:+             +:+       +:+   ",
+    "+#+              +#+          +#+ ",
+    "  +#+           +#+         +#+   ",
+    "    #+#        #+#        #+#     ",
+    "      ###     ###       ###       "
+]
 
 AD_ICON = [  # <Acceso a Datos>
     "            ::::      ::::::::    ",
@@ -42,7 +64,13 @@ def generate_header(file, project, creation_date):
     project = project[:21]
 
     # Define the header icon
-    HEADER_ICON = AC_ICON if project.upper().replace(" ", "") == "ADVENTOFCODE" else AD_ICON
+    match project.upper().replace(" ", ""):
+        case "ADVENTOFCODE":
+            HEADER_ICON = AC_ICON
+        case "HEADER":
+            HEADER_ICON = SCRIPT_ICON
+        case _:
+            HEADER_ICON = AD_ICON
 
     # Define the header structure
     header_lines = [
