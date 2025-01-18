@@ -15,3 +15,4 @@
 - [ ] Make it work with virtual environments (.venv at least)
 - [ ] Add an execution argument to remove headers (from a specific file or directory)
 - [ ] Make it add a different header depending on the project and file extension (with JSON config file)
+- [ ] Add git blame support to get all authors from the git history

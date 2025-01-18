@@ -6,7 +6,7 @@
 #     AUTHOR: Jorge Lopez Puebla      +#+              +#+          +#+       #
 #                                       +#+           +#+         +#+         #
 #     CREATED DATE: 15/09/2024            #+#        #+#        #+#           #
-#     LAST UPDATE: 27/12/2024               ###     ###       ###             #
+#     LAST UPDATE: 18/01/2025               ###     ###       ###             #
 #                                                                             #
 # --------------------------------------------------------------------------- #
 
@@ -42,6 +42,16 @@ AD_ICON = [  # <Acceso a Datos>
     "   ###     ###  ########+         "
 ]
 
+CHECKERS_ICON = [  # <Checkers>
+    "                    +#######+     ",
+    "                  +###########+   ",
+    "        ·''''''''·#############   ",
+    "       '''''''''''+###########+   ",
+    "       '''''''''''' +#######+     ",
+    "       ''''''''''''               ",
+    "        `''''''''´                "
+]
+
 AC_ICON = [  # <Advent of Code>
     "         ::::             ::::::::",
     "       ++: :+:          :+:    :+:",
@@ -64,6 +74,8 @@ def generate_header(file, project, creation_date):
     match project.upper().replace(" ", ""):
         case "ADVENTOFCODE":
             HEADER_ICON = AC_ICON
+        case "CHECKERS":
+            HEADER_ICON = CHECKERS_ICON
         case "HEADER":
             HEADER_ICON = SCRIPT_ICON
         case _:
