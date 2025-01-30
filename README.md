@@ -1,4 +1,6 @@
-## Effortlessly add custom headers to your code with a command or hotkey!
+# Header &nbsp;<img src="https://visitor-badge.laobi.icu/badge?page_id=jorge-lopz.header">
+
+Effortlessly add custom headers to your code with a command or hotkey!
 
 ![Example header](media/Example%20header.png)
 
